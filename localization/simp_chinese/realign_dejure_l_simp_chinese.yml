@@ -1,15 +1,15 @@
 ﻿l_simp_chinese:
  realign_vassal_dejure_interaction: "更定封臣法理"
- realign_vassal_dejure_interaction_desc: "颁行领主勘疆敕令，将 [recipient.GetTitledFirstName] 及其封臣实际统辖的所有非本法理土地，正式更定为其主头衔之法定法理领土；若该封臣为国王且您为皇帝，则将其王国划入您的帝国法理。"
- realign_vassal_dejure_prompt: "敕令勘定封臣辖地法理"
+ realign_vassal_dejure_interaction_desc: "颁行更定敕令，将 [recipient.GetTitledFirstName] 及其封臣实际统辖的所有非本法理土地，正式更定为其主头衔之法定法理领土；若该封臣为国王且您为皇帝，则将其王国划入您的帝国法理。"
+ realign_vassal_dejure_prompt: "敕令更定封臣辖地法理"
  realign_dejure_has_mismatch: "[recipient.GetShortUIName] 所辖疆土中存在非其法理管辖的领地，或其王国尚未划入领主帝国法理"
  realign_dejure_requires_crown_authority_2: "领主必须达到中级或更高君权（王权2级、部族权威2级、游牧权威2级、或官僚制/天朝政体2级以上）"
- realign_vassal_dejure_toast_title: "疆理勘定已竣"
+ realign_vassal_dejure_toast_title: "更定封臣法理已完成"
  realign_vassal_dejure_toast_desc: "依照领主敕令，[recipient.GetTitledFirstName] 所辖土地之法理归属已正式更定生效！"
 
  # 游戏规则
  rule_realign_dejure_cost_rule: "更定封臣法理规则"
  setting_realign_dejure_cost_free: "免费 / 沙盒模式"
- setting_realign_dejure_cost_free_desc: "更定封臣法理无需消耗威望与正统性，亦不受君权等级限制，领主可自由勘定天下疆理。"
+ setting_realign_dejure_cost_free_desc: "更定封臣法理无需消耗威望与正统性，亦不受君权等级限制，领主可自由更定天下封臣法理。"
  setting_realign_dejure_cost_balanced: "拟真平衡模式"
  setting_realign_dejure_cost_balanced_desc: "每次更定封臣法理需消耗 150 威望与 50 正统性，且要求领主达到中级（2级）或更高君权。"

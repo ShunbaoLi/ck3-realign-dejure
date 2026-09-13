@@ -1,4 +1,4 @@
-# CK3 Realign Vassal De Jure (更定封臣法理 / 勘定疆理)
+# CK3 Realign Vassal De Jure (更定封臣法理)
 
 <div align="center">
 

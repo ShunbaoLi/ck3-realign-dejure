@@ -1,0 +1,12 @@
+﻿realign_dejure_cost_rule = {
+	categories = {
+		gameplay
+	}
+	default = realign_dejure_cost_free
+
+	realign_dejure_cost_free = {
+	}
+
+	realign_dejure_cost_balanced = {
+	}
+}

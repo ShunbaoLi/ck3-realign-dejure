@@ -1,0 +1,235 @@
+﻿realign_vassal_dejure_interaction = {
+	category = interaction_category_vassal
+	icon = icon_title
+
+	desc = realign_vassal_dejure_interaction_desc
+	prompt = realign_vassal_dejure_prompt
+
+	auto_accept = yes
+
+	is_shown = {
+		scope:actor = {
+			is_ai = no
+		}
+		scope:recipient = {
+			is_landed = yes
+			target_is_liege_or_above = scope:actor
+			NOT = { this = scope:actor }
+			highest_held_title_tier >= tier_duchy
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		NOT = { scope:actor = { is_at_war_with = scope:recipient } }
+
+		trigger_if = {
+			limit = {
+				has_game_rule = realign_dejure_cost_balanced
+			}
+			scope:actor = {
+				trigger_if = {
+					limit = { has_legitimacy = yes }
+					legitimacy_level >= 1
+				}
+				custom_description = {
+					text = realign_dejure_requires_crown_authority_2
+					OR = {
+						has_realm_law = crown_authority_2
+						has_realm_law = crown_authority_3
+						has_realm_law = tribal_authority_2
+						has_realm_law = tribal_authority_3
+						has_realm_law = nomadic_authority_2
+						has_realm_law = nomadic_authority_3
+						has_realm_law = imperial_bureaucracy_2
+						has_realm_law = imperial_bureaucracy_3
+						has_realm_law = celestial_bureaucracy_2
+						has_realm_law = celestial_bureaucracy_3
+						has_realm_law = meritocratic_bureaucracy_2
+						has_realm_law = meritocratic_bureaucracy_3
+						has_realm_law = japanese_bureaucracy_2
+						has_realm_law = japanese_bureaucracy_3
+					}
+				}
+			}
+		}
+
+		custom_description = {
+			text = realign_dejure_has_mismatch
+			OR = {
+				# Case A: Recipient is a Duke (tier_duchy)
+				AND = {
+					scope:recipient.primary_title.tier = tier_duchy
+					OR = {
+						scope:recipient = {
+							any_held_title = {
+								tier = tier_county
+								NOT = { de_jure_liege = scope:recipient.primary_title }
+							}
+						}
+						scope:recipient = {
+							any_vassal_or_below = {
+								any_held_title = {
+									tier = tier_county
+									NOT = { de_jure_liege = scope:recipient.primary_title }
+								}
+							}
+						}
+						AND = {
+							scope:actor.primary_title.tier = tier_kingdom
+							scope:recipient = {
+								any_held_title = {
+									tier = tier_duchy
+									NOT = { de_jure_liege = scope:actor.primary_title }
+								}
+							}
+						}
+					}
+				}
+				# Case B: Recipient is a King (tier_kingdom)
+				AND = {
+					scope:recipient.primary_title.tier = tier_kingdom
+					OR = {
+						scope:recipient = {
+							any_held_title = {
+								tier = tier_duchy
+								NOT = { de_jure_liege = scope:recipient.primary_title }
+							}
+						}
+						scope:recipient = {
+							any_vassal_or_below = {
+								any_held_title = {
+									tier = tier_duchy
+									NOT = { de_jure_liege = scope:recipient.primary_title }
+								}
+							}
+						}
+						AND = {
+							scope:actor.primary_title.tier = tier_empire
+							scope:recipient = {
+								any_held_title = {
+									tier = tier_kingdom
+									NOT = { de_jure_liege = scope:actor.primary_title }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	cost = {
+		prestige = {
+			value = {
+				add = 0
+				if = {
+					limit = {
+						has_game_rule = realign_dejure_cost_balanced
+					}
+					add = 150
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				has_game_rule = realign_dejure_cost_balanced
+				scope:actor = { has_legitimacy = yes }
+			}
+			scope:actor = {
+				add_legitimacy = -50
+			}
+		}
+
+		if = {
+			limit = {
+				scope:recipient.primary_title.tier = tier_duchy
+			}
+			scope:recipient = {
+				every_held_title = {
+					limit = {
+						tier = tier_county
+						NOT = { de_jure_liege = scope:recipient.primary_title }
+					}
+					set_de_jure_liege_title = scope:recipient.primary_title
+				}
+				every_vassal_or_below = {
+					every_held_title = {
+						limit = {
+							tier = tier_county
+							NOT = { de_jure_liege = scope:recipient.primary_title }
+						}
+						set_de_jure_liege_title = scope:recipient.primary_title
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:actor.primary_title.tier = tier_kingdom
+				}
+				scope:recipient = {
+					every_held_title = {
+						limit = {
+							tier = tier_duchy
+							NOT = { de_jure_liege = scope:actor.primary_title }
+						}
+						set_de_jure_liege_title = scope:actor.primary_title
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:recipient.primary_title.tier = tier_kingdom
+			}
+			scope:recipient = {
+				every_held_title = {
+					limit = {
+						tier = tier_duchy
+						NOT = { de_jure_liege = scope:recipient.primary_title }
+					}
+					set_de_jure_liege_title = scope:recipient.primary_title
+				}
+				every_vassal_or_below = {
+					every_held_title = {
+						limit = {
+							tier = tier_duchy
+							NOT = { de_jure_liege = scope:recipient.primary_title }
+						}
+						set_de_jure_liege_title = scope:recipient.primary_title
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:actor.primary_title.tier = tier_empire
+				}
+				scope:recipient = {
+					every_held_title = {
+						limit = {
+							tier = tier_kingdom
+							NOT = { de_jure_liege = scope:actor.primary_title }
+						}
+						set_de_jure_liege_title = scope:actor.primary_title
+					}
+				}
+			}
+		}
+
+		scope:actor = {
+			send_interface_toast = {
+				title = realign_vassal_dejure_toast_title
+				left_icon = scope:actor
+				right_icon = scope:recipient
+				custom_tooltip = realign_vassal_dejure_toast_desc
+			}
+		}
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}

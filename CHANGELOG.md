@@ -17,7 +17,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.1] - 2026-09-13
+### Fixed
+- **排除世家宅邸与名义头衔 (Exclude Noble Families & Titular Titles)**：
+  - [CN] 为所有头衔判定增加 `is_noble_family_title = no`、`is_landless_type_title = no` 与 `is_titular = no` 过滤器。
+  - [EN] Added title filtering for `is_noble_family_title = no`, `is_landless_type_title = no`, and `is_titular = no`.
+  - [CN] 彻底修复在行政制与天朝官僚制（TGP）下，封臣的世家宅邸头衔（如“东方家族”、“苫家族”等庄园伯爵领）以及无实体版图的名义头衔被错误更定法理领主的 Bug。
+  - [EN] Fixed edge case where Administrative and Celestial Empire noble family estate titles (e.g. House Estates) and titular titles were erroneously realigned as de jure vassals.
+
+---
+
 ## [1.0.0] - 2026-09-13
+
 ### Added
 - **更定封臣法理核心机制 (Core De Jure Realignment Mechanism)**：
   - [CN] 引入领主右键封臣交互“更定封臣法理”（`realign_vassal_dejure_interaction`），归类于封臣交互（`interaction_category_vassal`）。

@@ -63,6 +63,9 @@
 						scope:recipient = {
 							any_held_title = {
 								tier = tier_county
+								is_noble_family_title = no
+								is_landless_type_title = no
+								is_titular = no
 								NOT = { de_jure_liege = scope:recipient.primary_title }
 							}
 						}
@@ -70,6 +73,9 @@
 							any_vassal_or_below = {
 								any_held_title = {
 									tier = tier_county
+									is_noble_family_title = no
+									is_landless_type_title = no
+									is_titular = no
 									NOT = { de_jure_liege = scope:recipient.primary_title }
 								}
 							}
@@ -79,6 +85,9 @@
 							scope:recipient = {
 								any_held_title = {
 									tier = tier_duchy
+									is_noble_family_title = no
+									is_landless_type_title = no
+									is_titular = no
 									NOT = { de_jure_liege = scope:actor.primary_title }
 								}
 							}
@@ -92,6 +101,9 @@
 						scope:recipient = {
 							any_held_title = {
 								tier = tier_duchy
+								is_noble_family_title = no
+								is_landless_type_title = no
+								is_titular = no
 								NOT = { de_jure_liege = scope:recipient.primary_title }
 							}
 						}
@@ -99,6 +111,9 @@
 							any_vassal_or_below = {
 								any_held_title = {
 									tier = tier_duchy
+									is_noble_family_title = no
+									is_landless_type_title = no
+									is_titular = no
 									NOT = { de_jure_liege = scope:recipient.primary_title }
 								}
 							}
@@ -108,6 +123,9 @@
 							scope:recipient = {
 								any_held_title = {
 									tier = tier_kingdom
+									is_noble_family_title = no
+									is_landless_type_title = no
+									is_titular = no
 									NOT = { de_jure_liege = scope:actor.primary_title }
 								}
 							}
@@ -151,6 +169,9 @@
 				every_held_title = {
 					limit = {
 						tier = tier_county
+						is_noble_family_title = no
+						is_landless_type_title = no
+						is_titular = no
 						NOT = { de_jure_liege = scope:recipient.primary_title }
 					}
 					set_de_jure_liege_title = scope:recipient.primary_title
@@ -159,6 +180,9 @@
 					every_held_title = {
 						limit = {
 							tier = tier_county
+							is_noble_family_title = no
+							is_landless_type_title = no
+							is_titular = no
 							NOT = { de_jure_liege = scope:recipient.primary_title }
 						}
 						set_de_jure_liege_title = scope:recipient.primary_title
@@ -173,6 +197,9 @@
 					every_held_title = {
 						limit = {
 							tier = tier_duchy
+							is_noble_family_title = no
+							is_landless_type_title = no
+							is_titular = no
 							NOT = { de_jure_liege = scope:actor.primary_title }
 						}
 						set_de_jure_liege_title = scope:actor.primary_title
@@ -189,6 +216,9 @@
 				every_held_title = {
 					limit = {
 						tier = tier_duchy
+						is_noble_family_title = no
+						is_landless_type_title = no
+						is_titular = no
 						NOT = { de_jure_liege = scope:recipient.primary_title }
 					}
 					set_de_jure_liege_title = scope:recipient.primary_title
@@ -197,6 +227,9 @@
 					every_held_title = {
 						limit = {
 							tier = tier_duchy
+							is_noble_family_title = no
+							is_landless_type_title = no
+							is_titular = no
 							NOT = { de_jure_liege = scope:recipient.primary_title }
 						}
 						set_de_jure_liege_title = scope:recipient.primary_title
@@ -211,6 +244,9 @@
 					every_held_title = {
 						limit = {
 							tier = tier_kingdom
+							is_noble_family_title = no
+							is_landless_type_title = no
+							is_titular = no
 							NOT = { de_jure_liege = scope:actor.primary_title }
 						}
 						set_de_jure_liege_title = scope:actor.primary_title

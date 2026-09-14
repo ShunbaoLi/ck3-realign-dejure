@@ -20,7 +20,10 @@
 	}
 
 	is_valid_showing_failures_only = {
-		NOT = { scope:actor = { is_at_war_with = scope:recipient } }
+		custom_description = {
+			text = realign_dejure_not_at_war
+			NOT = { scope:actor = { is_at_war_with = scope:recipient } }
+		}
 
 		trigger_if = {
 			limit = {
@@ -29,7 +32,10 @@
 			scope:actor = {
 				trigger_if = {
 					limit = { has_legitimacy = yes }
-					legitimacy_level >= 1
+					custom_description = {
+						text = realign_dejure_requires_legitimacy
+						legitimacy_level >= 1
+					}
 				}
 				custom_description = {
 					text = realign_dejure_requires_crown_authority_2

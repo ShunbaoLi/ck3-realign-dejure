@@ -2,6 +2,8 @@
  realign_vassal_dejure_interaction: "更定封臣法理"
  realign_vassal_dejure_interaction_desc: "颁行更定敕令，将 [recipient.GetTitledFirstName] 及其封臣实际统辖的所有非本法理土地，正式更定为其主头衔之法定法理领土；若该封臣为国王且您为皇帝，则将其王国划入您的帝国法理。"
  realign_vassal_dejure_prompt: "敕令更定封臣辖地法理"
+ realign_dejure_not_at_war: "领主不得与该封臣处于战争状态"
+ realign_dejure_requires_legitimacy: "平衡模式：领主需具备至少一级执政合法性"
  realign_dejure_has_mismatch: "[recipient.GetShortUIName] 所辖疆土中存在非其法理管辖的领地，或其王国尚未划入领主帝国法理"
  realign_dejure_requires_crown_authority_2: "领主必须达到中级或更高君权（王权2级、部族权威2级、游牧权威2级、或官僚制/天朝政体2级以上）"
  realign_vassal_dejure_toast_title: "更定封臣法理已完成"

@@ -17,6 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.3] - 2026-09-14
+
+### Added
+- 交互选项在条件不满足时，现在显示 ❗ 条件提示（战争状态、平衡模式君权要求、平衡模式合法性要求、无可更定法理等），与原版交互风格一致。
+- 新增本地化键：ealign_dejure_not_at_war、ealign_dejure_requires_legitimacy。
 ## [1.0.2] - 2026-09-14
 
 ### Fixed

@@ -3,15 +3,6 @@
  realign_vassal_dejure_interaction_desc: "Issue an imperial boundary decree to formally integrate all lands ruled by [recipient.GetTitledFirstName] and their subordinate vassals into the de jure realm of their primary title. If the vassal is a king and you are an emperor, also incorporate their kingdom into your imperial de jure."
  realign_vassal_dejure_prompt: "Decree Vassal Border Realignment"
  realign_dejure_not_at_war: "Must not be at war with this vassal"
- realign_dejure_requires_legitimacy: "Balanced Mode: Liege must have at least 1 level of legitimacy"
  realign_dejure_has_mismatch: "[recipient.GetShortUIName] rules over lands outside their de jure territory, or their kingdom is not part of your imperial de jure"
- realign_dejure_requires_crown_authority_2: "Liege must have at least Medium Crown Authority (Level 2 Crown/Tribal/Nomadic/Bureaucratic Authority or higher)"
  realign_vassal_dejure_toast_title: "De Jure Realignment Complete"
  realign_vassal_dejure_toast_desc: "By sovereign decree, the de jure realm of [recipient.GetTitledFirstName] has been formally realigned!"
-
- # Game Rules
- rule_realign_dejure_cost_rule: "Realign Vassal De Jure Costs"
- setting_realign_dejure_cost_free: "Free / Sandbox Mode"
- setting_realign_dejure_cost_free_desc: "Realigning vassal de jure titles costs no prestige or legitimacy, and has no Crown Authority requirement."
- setting_realign_dejure_cost_balanced: "Realistic / Balanced Mode"
- setting_realign_dejure_cost_balanced_desc: "Realigning vassal de jure titles costs 150 prestige and 50 legitimacy, and requires Medium Crown Authority (Level 2) or higher."

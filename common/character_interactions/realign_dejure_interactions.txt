@@ -25,40 +25,6 @@
 			NOT = { scope:actor = { is_at_war_with = scope:recipient } }
 		}
 
-		trigger_if = {
-			limit = {
-				has_game_rule = realign_dejure_cost_balanced
-			}
-			scope:actor = {
-				trigger_if = {
-					limit = { has_legitimacy = yes }
-					custom_description = {
-						text = realign_dejure_requires_legitimacy
-						legitimacy_level >= 1
-					}
-				}
-				custom_description = {
-					text = realign_dejure_requires_crown_authority_2
-					OR = {
-						has_realm_law = crown_authority_2
-						has_realm_law = crown_authority_3
-						has_realm_law = tribal_authority_2
-						has_realm_law = tribal_authority_3
-						has_realm_law = nomadic_authority_2
-						has_realm_law = nomadic_authority_3
-						has_realm_law = imperial_bureaucracy_2
-						has_realm_law = imperial_bureaucracy_3
-						has_realm_law = celestial_bureaucracy_2
-						has_realm_law = celestial_bureaucracy_3
-						has_realm_law = meritocratic_bureaucracy_2
-						has_realm_law = meritocratic_bureaucracy_3
-						has_realm_law = japanese_bureaucracy_2
-						has_realm_law = japanese_bureaucracy_3
-					}
-				}
-			}
-		}
-
 		custom_description = {
 			text = realign_dejure_has_mismatch
 			OR = {
@@ -142,31 +108,7 @@
 		}
 	}
 
-	cost = {
-		prestige = {
-			value = {
-				add = 0
-				if = {
-					limit = {
-						has_game_rule = realign_dejure_cost_balanced
-					}
-					add = 150
-				}
-			}
-		}
-	}
-
 	on_accept = {
-		if = {
-			limit = {
-				has_game_rule = realign_dejure_cost_balanced
-				scope:actor = { has_legitimacy = yes }
-			}
-			scope:actor = {
-				add_legitimacy = -50
-			}
-		}
-
 		if = {
 			limit = {
 				scope:recipient.primary_title.tier = tier_duchy

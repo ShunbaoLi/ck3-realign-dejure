@@ -17,6 +17,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.4] - 2026-09-14
+
+### Removed
+- 移除"拟真平衡模式"游戏规则选项，Mod 现在仅提供无限制沙盒模式：更定封臣法理无任何威望、正统性或君权消耗。
+- 删除 common/game_rules/realign_dejure_game_rules.txt。
+- 移除所有与平衡模式相关的本地化键。
 ## [1.0.3] - 2026-09-14
 
 ### Added

@@ -1,4 +1,4 @@
-# 更新日志 (Changelog)
+﻿# 更新日志 (Changelog)
 
 All notable changes to this project will be documented in this file.  
 本项目的所有重要更新均记录于此文件。
@@ -17,6 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.2] - 2026-09-14
+
+### Fixed
+- 更定封臣法理交互菜单现在正确显示图标（与"转封封臣"交互一致，使用 icon_vassal）。
 ## [1.0.1] - 2026-09-13
 ### Fixed
 - **排除世家宅邸与名义头衔 (Exclude Noble Families & Titular Titles)**：

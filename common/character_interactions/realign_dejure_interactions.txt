@@ -1,6 +1,6 @@
 ﻿realign_vassal_dejure_interaction = {
 	category = interaction_category_vassal
-	icon = icon_title
+	icon = icon_vassal
 
 	desc = realign_vassal_dejure_interaction_desc
 	prompt = realign_vassal_dejure_prompt

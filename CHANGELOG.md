@@ -1,4 +1,4 @@
-﻿# 更新日志 (Changelog)
+# 更新日志 (Changelog)
 
 All notable changes to this project will be documented in this file.  
 本项目的所有重要更新均记录于此文件。
@@ -17,7 +17,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.0.4] - 2026-09-14
+## [1.0.5] - 2026-09-15
+
+### Fixed
+- **支持帝国级行台/总督封臣与下属王国更定 (Support Empire-tier Vassals & Subordinate Kingdoms)**：
+  - [CN] 新增对帝国级封臣（`tier_empire`，如中华天朝行台、都督府等）的主头衔法理更定支持，一键将其名下及所有下属封臣实际统辖的非本法理王国划入其帝国法理（如将流求路更定入荆扬行台）。
+  - [EN] Added support for empire-tier vassals (`tier_empire`, such as Hangtai/Grand Viceroys), realigning all subordinate kingdoms held directly or by their vassals into their imperial de jure.
+  - [CN] 修复将王国划归皇帝法理时未遍历封臣下属（`any_vassal_or_below`）的缺陷，确保转封给大封臣的王国领地亦能被精准检测与更定。
+  - [EN] Fixed missing traversal of subordinate vassals (`any_vassal_or_below`) for kingdom titles, ensuring kingdoms transferred under grand vassals are correctly detected and realigned.
+  - [CN] 领主等级判定全面适配霸权/天朝大一统级（`tier_hegemony`，如大唐帝国 `h_china`），解除原版仅限制在 `tier_empire` 的逻辑约束。
+  - [EN] Expanded liege tier check to encompass Hegemony-tier rulers (`tier_hegemony`, e.g. `h_china`).
+
+---
 
 ### Removed
 - 移除"拟真平衡模式"游戏规则选项，Mod 现在仅提供无限制沙盒模式：更定封臣法理无任何威望、正统性或君权消耗。

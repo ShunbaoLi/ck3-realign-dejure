@@ -31,7 +31,8 @@ This mod introduces a sovereign **Imperial Boundary Decree** right-click charact
 | :--- | :--- | :--- | :--- |
 | **Dukes / Jiedushi** (`tier_duchy`) | Non-de jure counties exist under their direct or vassal domain | Realigns all counties held by the duke or their subordinate vassals **instantly and permanently into the duke's primary title de jure** | Eliminates duchy-level enclaves and border gore |
 | **Kings / Protectorates** (`tier_kingdom`) | Non-de jure duchies exist under their direct or vassal domain | Realigns all duchies held by the king or their subordinate vassals **instantly and permanently into the king's primary title de jure** | Reconstructs grand vassal borders and regional administrative zones |
-| **Emperors over King Vassals** (`tier_empire`) | King's kingdom is not yet de jure part of the liege's empire | Realigns the kingdom title **instantly and permanently into the emperor's primary imperial de jure** | Unifies the imperial realm without waiting for 100-year drift |
+| **Hangtai / Grand Viceroys** (`tier_empire`) | Non-de jure kingdoms exist under their direct or vassal domain | Realigns all kingdoms held by the viceroy or their subordinate vassals **instantly and permanently into the viceroy's primary title de jure** | Fully supports Celestial Hangtai and Grand Administrative regions |
+| **Emperors / Hegemons over Vassals** (`tier_empire` / `tier_hegemony`) | Vassal-controlled kingdoms or empires are not yet part of liege's de jure | Realigns the kingdom or empire titles **instantly and permanently into the liege's primary title de jure** | Unifies the imperial realm without waiting for 100-year drift |
 
 ---
 

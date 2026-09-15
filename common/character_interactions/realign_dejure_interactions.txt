@@ -91,14 +91,78 @@
 							}
 						}
 						AND = {
-							scope:actor.primary_title.tier = tier_empire
-							scope:recipient = {
+							scope:actor.primary_title.tier >= tier_empire
+							OR = {
+								scope:recipient = {
+									any_held_title = {
+										tier = tier_kingdom
+										is_noble_family_title = no
+										is_landless_type_title = no
+										is_titular = no
+										NOT = { de_jure_liege = scope:actor.primary_title }
+									}
+								}
+								scope:recipient = {
+									any_vassal_or_below = {
+										any_held_title = {
+											tier = tier_kingdom
+											is_noble_family_title = no
+											is_landless_type_title = no
+											is_titular = no
+											NOT = { de_jure_liege = scope:actor.primary_title }
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				# Case C: Recipient is an Emperor (tier_empire)
+				AND = {
+					scope:recipient.primary_title.tier = tier_empire
+					OR = {
+						scope:recipient = {
+							any_held_title = {
+								tier = tier_kingdom
+								is_noble_family_title = no
+								is_landless_type_title = no
+								is_titular = no
+								NOT = { de_jure_liege = scope:recipient.primary_title }
+							}
+						}
+						scope:recipient = {
+							any_vassal_or_below = {
 								any_held_title = {
 									tier = tier_kingdom
 									is_noble_family_title = no
 									is_landless_type_title = no
 									is_titular = no
-									NOT = { de_jure_liege = scope:actor.primary_title }
+									NOT = { de_jure_liege = scope:recipient.primary_title }
+								}
+							}
+						}
+						AND = {
+							scope:actor.primary_title.tier >= tier_hegemony
+							OR = {
+								scope:recipient = {
+									any_held_title = {
+										tier = tier_empire
+										is_noble_family_title = no
+										is_landless_type_title = no
+										is_titular = no
+										NOT = { de_jure_liege = scope:actor.primary_title }
+									}
+								}
+								scope:recipient = {
+									any_vassal_or_below = {
+										any_held_title = {
+											tier = tier_empire
+											is_noble_family_title = no
+											is_landless_type_title = no
+											is_titular = no
+											NOT = { de_jure_liege = scope:actor.primary_title }
+										}
+									}
 								}
 							}
 						}
@@ -186,7 +250,7 @@
 			}
 			if = {
 				limit = {
-					scope:actor.primary_title.tier = tier_empire
+					scope:actor.primary_title.tier >= tier_empire
 				}
 				scope:recipient = {
 					every_held_title = {
@@ -198,6 +262,77 @@
 							NOT = { de_jure_liege = scope:actor.primary_title }
 						}
 						set_de_jure_liege_title = scope:actor.primary_title
+					}
+					every_vassal_or_below = {
+						every_held_title = {
+							limit = {
+								tier = tier_kingdom
+								is_noble_family_title = no
+								is_landless_type_title = no
+								is_titular = no
+								NOT = { de_jure_liege = scope:actor.primary_title }
+							}
+							set_de_jure_liege_title = scope:actor.primary_title
+						}
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:recipient.primary_title.tier = tier_empire
+			}
+			scope:recipient = {
+				every_held_title = {
+					limit = {
+						tier = tier_kingdom
+						is_noble_family_title = no
+						is_landless_type_title = no
+						is_titular = no
+						NOT = { de_jure_liege = scope:recipient.primary_title }
+					}
+					set_de_jure_liege_title = scope:recipient.primary_title
+				}
+				every_vassal_or_below = {
+					every_held_title = {
+						limit = {
+							tier = tier_kingdom
+							is_noble_family_title = no
+							is_landless_type_title = no
+							is_titular = no
+							NOT = { de_jure_liege = scope:recipient.primary_title }
+						}
+						set_de_jure_liege_title = scope:recipient.primary_title
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:actor.primary_title.tier >= tier_hegemony
+				}
+				scope:recipient = {
+					every_held_title = {
+						limit = {
+							tier = tier_empire
+							is_noble_family_title = no
+							is_landless_type_title = no
+							is_titular = no
+							NOT = { de_jure_liege = scope:actor.primary_title }
+						}
+						set_de_jure_liege_title = scope:actor.primary_title
+					}
+					every_vassal_or_below = {
+						every_held_title = {
+							limit = {
+								tier = tier_empire
+								is_noble_family_title = no
+								is_landless_type_title = no
+								is_titular = no
+								NOT = { de_jure_liege = scope:actor.primary_title }
+							}
+							set_de_jure_liege_title = scope:actor.primary_title
+						}
 					}
 				}
 			}
